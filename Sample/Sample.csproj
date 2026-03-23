@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>11</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <EnablePreviewFeatures>false</EnablePreviewFeatures>
+    <Configurations>Debug;Release</Configurations>
+    <Platforms>AnyCPU</Platforms>
+    <NoWarn>1701;1702;1591;CS8618;NU1701;</NoWarn>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <Target Name="DeleteBinObjFolders" AfterTargets="Clean">
+    <RemoveDir Directories=".\bin\**" />
+    <Delete Files=".\obj\**\*.cs" />
+  </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Serilog.Sinks.ApplicationInsights.AspNetCore\Serilog.Sinks.ApplicationInsights.AspNetCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+  </ItemGroup>
+
+</Project>
