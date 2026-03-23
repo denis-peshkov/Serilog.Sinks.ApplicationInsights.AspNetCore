@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/.github/" />
+  <Folder Name="/.github/workflows/">
+    <File Path=".github/workflows/dotnet.yml" />
+  </Folder>
+  <Folder Name="/assets/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="GitVersion.yml" />
+    <File Path="icon.png" />
+    <File Path="icon.svg" />
+    <File Path="LICENSE" />
+    <File Path="LOGGING-AND-METRICS.md" />
+    <File Path="README.md" />
+    <File Path="ReleaseNotes.md" />
+  </Folder>
+  <Project Path="Sample\Sample.csproj" />
+  <Project Path="Serilog.Sinks.ApplicationInsights.AspNetCore.UnitTests\Serilog.Sinks.ApplicationInsights.AspNetCore.UnitTests.csproj" />
+  <Project Path="Serilog.Sinks.ApplicationInsights.AspNetCore\Serilog.Sinks.ApplicationInsights.AspNetCore.csproj" />
+</Solution>

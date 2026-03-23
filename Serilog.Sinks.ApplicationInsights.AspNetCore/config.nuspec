@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Serilog.Sinks.ApplicationInsights.AspNetCore</id>
+    <version>0.0.0</version>
+    <authors>denis-peshkov</authors>
+    <owners>denis-peshkov</owners>
+    <copyright>Copyright 2026 Denis Peshkov</copyright>
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore</projectUrl>
+    <repository type="git" url="https://github.com/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore" />
+    <readme>docs\README.md</readme>
+    <icon>icon.png</icon>
+    <releaseNotes>
+      fix name convention
+    </releaseNotes>
+    <description>
+      Serilog and Application Insights for ASP.NET Core: telemetry registration, W3C correlation initializers, and ILogger extensions for events, metrics, dependencies, and requests.
+    </description>
+    <tags>serilog application-insights aspnetcore logging telemetry dotnet csharp</tags>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Microsoft.ApplicationInsights" version="2.23.0" />
+        <dependency id="Microsoft.ApplicationInsights.AspNetCore" version="2.23.0" />
+        <dependency id="Azure.Identity" version="1.14.2" />
+        <dependency id="Microsoft.Extensions.Configuration" version="8.0.0" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="8.0.0" />
+        <dependency id="Microsoft.Extensions.Configuration.Binder" version="8.0.2" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="8.0.1" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="8.0.2" />
+        <dependency id="Microsoft.Extensions.Logging" version="8.0.1" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="8.0.3" />
+        <dependency id="Microsoft.Extensions.Options" version="8.0.2" />
+        <dependency id="Serilog" version="4.3.0" />
+        <dependency id="Serilog.Sinks.ApplicationInsights" version="5.0.0" />
+      </group>
+      <group targetFramework="net7.0">
+        <dependency id="Microsoft.ApplicationInsights" version="2.23.0" />
+        <dependency id="Microsoft.ApplicationInsights.AspNetCore" version="2.23.0" />
+        <dependency id="Azure.Identity" version="1.14.2" />
+        <dependency id="Microsoft.Extensions.Configuration" version="8.0.0" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="8.0.0" />
+        <dependency id="Microsoft.Extensions.Configuration.Binder" version="8.0.2" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="8.0.1" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="8.0.2" />
+        <dependency id="Microsoft.Extensions.Logging" version="8.0.1" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="8.0.3" />
+        <dependency id="Microsoft.Extensions.Options" version="8.0.2" />
+        <dependency id="Serilog" version="4.3.0" />
+        <dependency id="Serilog.Sinks.ApplicationInsights" version="5.0.0" />
+      </group>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.ApplicationInsights" version="2.23.0" />
+        <dependency id="Microsoft.ApplicationInsights.AspNetCore" version="2.23.0" />
+        <dependency id="Azure.Identity" version="1.14.2" />
+        <dependency id="Microsoft.Extensions.Configuration" version="8.0.0" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="8.0.0" />
+        <dependency id="Microsoft.Extensions.Configuration.Binder" version="8.0.2" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="8.0.1" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="8.0.2" />
+        <dependency id="Microsoft.Extensions.Logging" version="8.0.1" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="8.0.3" />
+        <dependency id="Microsoft.Extensions.Options" version="8.0.2" />
+        <dependency id="Serilog" version="4.3.0" />
+        <dependency id="Serilog.Sinks.ApplicationInsights" version="5.0.0" />
+      </group>
+      <group targetFramework="net9.0">
+        <dependency id="Microsoft.ApplicationInsights" version="2.23.0" />
+        <dependency id="Microsoft.ApplicationInsights.AspNetCore" version="2.23.0" />
+        <dependency id="Azure.Identity" version="1.14.2" />
+        <dependency id="Microsoft.Extensions.Configuration" version="9.0.14" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="9.0.14" />
+        <dependency id="Microsoft.Extensions.Configuration.Binder" version="9.0.14" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="9.0.14" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="9.0.14" />
+        <dependency id="Microsoft.Extensions.Logging" version="9.0.14" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="9.0.14" />
+        <dependency id="Microsoft.Extensions.Options" version="9.0.14" />
+        <dependency id="Serilog" version="4.3.0" />
+        <dependency id="Serilog.Sinks.ApplicationInsights" version="5.0.0" />
+      </group>
+      <group targetFramework="net10.0">
+        <dependency id="Microsoft.ApplicationInsights" version="2.23.0" />
+        <dependency id="Microsoft.ApplicationInsights.AspNetCore" version="2.23.0" />
+        <dependency id="Azure.Identity" version="1.14.2" />
+        <dependency id="Microsoft.Extensions.Configuration" version="10.0.5" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="10.0.5" />
+        <dependency id="Microsoft.Extensions.Configuration.Binder" version="10.0.5" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="10.0.5" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="10.0.5" />
+        <dependency id="Microsoft.Extensions.Logging" version="10.0.5" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="10.0.5" />
+        <dependency id="Microsoft.Extensions.Options" version="10.0.5" />
+        <dependency id="Serilog" version="4.3.0" />
+        <dependency id="Serilog.Sinks.ApplicationInsights" version="5.0.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\net6.0\Serilog.Sinks.ApplicationInsights.AspNetCore.*" target="lib\net6.0" />
+    <file src="bin\Release\net7.0\Serilog.Sinks.ApplicationInsights.AspNetCore.*" target="lib\net7.0" />
+    <file src="bin\Release\net8.0\Serilog.Sinks.ApplicationInsights.AspNetCore.*" target="lib\net8.0" />
+    <file src="bin\Release\net9.0\Serilog.Sinks.ApplicationInsights.AspNetCore.*" target="lib\net9.0" />
+    <file src="bin\Release\net10.0\Serilog.Sinks.ApplicationInsights.AspNetCore.*" target="lib\net10.0" />
+    <file src="..\README.md" target="docs\" />
+    <file src="..\icon.png" target="" />
+  </files>
+</package>

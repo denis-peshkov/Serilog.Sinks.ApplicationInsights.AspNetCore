@@ -1,0 +1,35 @@
+﻿// Global using directives
+
+global using System;
+global using System.Collections.Generic;
+global using System.Diagnostics;
+global using System.IO;
+global using System.Globalization;
+global using System.Linq;
+global using System.Threading.Tasks;
+global using FluentAssertions;
+global using Microsoft.ApplicationInsights;
+global using Microsoft.ApplicationInsights.AspNetCore.Extensions;
+global using Microsoft.ApplicationInsights.Channel;
+global using Microsoft.ApplicationInsights.DataContracts;
+global using Microsoft.AspNetCore.Builder;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.AspNetCore.Http.Extensions;
+global using Microsoft.ApplicationInsights.Extensibility;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.FileProviders;
+global using Microsoft.Extensions.Logging;
+global using Microsoft.Extensions.Options;
+global using Moq;
+global using NUnit.Framework;
+global using Serilog.Sinks.ApplicationInsights.AspNetCore;
+global using Serilog.Sinks.ApplicationInsights.AspNetCore.Core;
+global using Serilog.Sinks.ApplicationInsights.AspNetCore.Extensions;
+global using Serilog.Sinks.ApplicationInsights.AspNetCore.Helpers;
+global using Serilog.Sinks.ApplicationInsights.AspNetCore.Middlewares;
+global using Serilog.Sinks.ApplicationInsights.AspNetCore.UnitTests.Support;
+global using Serilog.Events;
+global using Serilog.Parsing;
+global using Serilog.Sinks.ApplicationInsights.TelemetryConverters;

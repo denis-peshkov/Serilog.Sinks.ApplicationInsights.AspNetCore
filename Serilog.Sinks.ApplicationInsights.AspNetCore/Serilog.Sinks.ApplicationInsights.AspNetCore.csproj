@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+    <LangVersion>11</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <EnablePreviewFeatures>false</EnablePreviewFeatures>
+    <Configurations>Debug;Release</Configurations>
+    <Platforms>AnyCPU</Platforms>
+    <NoWarn>1701;1702;1591;CS8618;NU1701;</NoWarn>
+  </PropertyGroup>
+
+  <Target Name="DeleteBinObjFolders" AfterTargets="Clean">
+    <RemoveDir Directories=".\bin\**" />
+    <Delete Files=".\obj\**\*.cs" />
+  </Target>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <!--
+    Microsoft.Extensions.*: net9/10 use one aligned patch line. net6–8 share the 8.0.x set so Azure.Identity → Azure.Core → System.ClientModel
+    does not force downgrades (needs Logging.Abstractions ≥ 8.0.3 and matching DI.Abstractions, etc.).
+  -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0' Or '$(TargetFramework)' == 'net7.0' Or '$(TargetFramework)' == 'net8.0'">
+    <MicrosoftExtConfigurationVersion>8.0.0</MicrosoftExtConfigurationVersion>
+    <MicrosoftExtConfigurationAbstractionsVersion>8.0.0</MicrosoftExtConfigurationAbstractionsVersion>
+    <MicrosoftExtConfigurationBinderVersion>8.0.2</MicrosoftExtConfigurationBinderVersion>
+    <MicrosoftExtDependencyInjectionVersion>8.0.1</MicrosoftExtDependencyInjectionVersion>
+    <MicrosoftExtDependencyInjectionAbstractionsVersion>8.0.2</MicrosoftExtDependencyInjectionAbstractionsVersion>
+    <MicrosoftExtLoggingVersion>8.0.1</MicrosoftExtLoggingVersion>
+    <MicrosoftExtLoggingAbstractionsVersion>8.0.3</MicrosoftExtLoggingAbstractionsVersion>
+    <MicrosoftExtOptionsVersion>8.0.2</MicrosoftExtOptionsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net9.0'">
+    <MicrosoftExtConfigurationVersion>9.0.14</MicrosoftExtConfigurationVersion>
+    <MicrosoftExtConfigurationAbstractionsVersion>9.0.14</MicrosoftExtConfigurationAbstractionsVersion>
+    <MicrosoftExtConfigurationBinderVersion>9.0.14</MicrosoftExtConfigurationBinderVersion>
+    <MicrosoftExtDependencyInjectionVersion>9.0.14</MicrosoftExtDependencyInjectionVersion>
+    <MicrosoftExtDependencyInjectionAbstractionsVersion>9.0.14</MicrosoftExtDependencyInjectionAbstractionsVersion>
+    <MicrosoftExtLoggingVersion>9.0.14</MicrosoftExtLoggingVersion>
+    <MicrosoftExtLoggingAbstractionsVersion>9.0.14</MicrosoftExtLoggingAbstractionsVersion>
+    <MicrosoftExtOptionsVersion>9.0.14</MicrosoftExtOptionsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <MicrosoftExtConfigurationVersion>10.0.5</MicrosoftExtConfigurationVersion>
+    <MicrosoftExtConfigurationAbstractionsVersion>10.0.5</MicrosoftExtConfigurationAbstractionsVersion>
+    <MicrosoftExtConfigurationBinderVersion>10.0.5</MicrosoftExtConfigurationBinderVersion>
+    <MicrosoftExtDependencyInjectionVersion>10.0.5</MicrosoftExtDependencyInjectionVersion>
+    <MicrosoftExtDependencyInjectionAbstractionsVersion>10.0.5</MicrosoftExtDependencyInjectionAbstractionsVersion>
+    <MicrosoftExtLoggingVersion>10.0.5</MicrosoftExtLoggingVersion>
+    <MicrosoftExtLoggingAbstractionsVersion>10.0.5</MicrosoftExtLoggingAbstractionsVersion>
+    <MicrosoftExtOptionsVersion>10.0.5</MicrosoftExtOptionsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.14.2" />
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.23.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.23.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="$(MicrosoftExtConfigurationVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MicrosoftExtConfigurationAbstractionsVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="$(MicrosoftExtConfigurationBinderVersion)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtDependencyInjectionVersion)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(MicrosoftExtDependencyInjectionAbstractionsVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="$(MicrosoftExtLoggingVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="$(MicrosoftExtLoggingAbstractionsVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="$(MicrosoftExtOptionsVersion)" />
+
+    <PackageReference Include="Serilog" Version="4.3.0" />
+    <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="5.0.0" />
+
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
