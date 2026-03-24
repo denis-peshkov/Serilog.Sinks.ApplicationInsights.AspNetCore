@@ -74,25 +74,25 @@ jobs:
           -p:NeutralLanguage=en
 
       - name: Run tests
-        run: dotnet test /p:Configuration=$BUILD_CONFIG --no-restore --no-build --verbosity normal
+        run: >
+          dotnet test /p:Configuration=$BUILD_CONFIG
+          --no-restore
+          --no-build
+          --verbosity normal
+          --collect:"XPlat Code Coverage"
+          --results-directory ./TestResults
+          --
+          DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
 
       - name: SonarQube Scan
         uses: sonarsource/sonarcloud-github-action@v5 # Ex: v4.0.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan
         with:
-          #          projectBaseDir: app/
-          #          args: >
-          #            -Dsonar.organization=peshkov
-          #            -Dsonar.projectKey=Serilog.Sinks.ApplicationInsights.AspNetCore
-          #            -Dsonar.python.coverage.reportPaths=coverage.xml
-          #            -Dsonar.sources=Serilog.Sinks.ApplicationInsights.AspNetCore/
-          #            -Dsonar.tests=tests/
-          #            -Dsonar.test.exclusions=tests/**
-          #            -Dsonar.verbose=true
           args: >
             -Dsonar.organization=peshkov
             -Dsonar.projectKey=Serilog.Sinks.ApplicationInsights.AspNetCore
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.sources=Serilog.Sinks.ApplicationInsights.AspNetCore/
+            -Dsonar.tests=Serilog.Sinks.ApplicationInsights.AspNetCore.UnitTests/
             -Dsonar.verbose=true
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -101,7 +101,7 @@ jobs:
         run: nuget pack Serilog.Sinks.ApplicationInsights.AspNetCore/config.nuspec -Symbols -Version ${{ env.semVer }}
 
       - name: Create git Tag
-        if: ${{ contains('refs/heads/hotfix', github.ref) || contains('refs/heads/release', github.ref) || contains('refs/heads/master', github.ref) }}
+        if: ${{ contains('refs/heads/master', github.ref) || contains('refs/heads/release', github.ref) || contains('refs/heads/hotfix', github.ref) }}
         run: |
           git tag v${{ env.semVer }}
 

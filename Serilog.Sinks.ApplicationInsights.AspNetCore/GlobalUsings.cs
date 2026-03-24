@@ -1,4 +1,6 @@
-﻿global using System;
+﻿// Global using directives
+
+global using System;
 global using System.Collections.Generic;
 global using System.Diagnostics;
 global using System.IO;
@@ -18,8 +20,8 @@ global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;
 global using Microsoft.Extensions.Options;
-global using Serilog.Sinks.ApplicationInsights.AspNetCore.Core;
-global using Serilog.Sinks.ApplicationInsights.AspNetCore.Helpers;
 global using Serilog.Core;
 global using Serilog.Events;
+global using Serilog.Sinks.ApplicationInsights.AspNetCore.Core;
+global using Serilog.Sinks.ApplicationInsights.AspNetCore.Helpers;
 global using Serilog.Sinks.ApplicationInsights.TelemetryConverters;

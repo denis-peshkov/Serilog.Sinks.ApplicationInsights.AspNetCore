@@ -6,7 +6,7 @@ root = true
 # Don't use tabs for indentation.
 [*]
 indent_style = space
-charset = utf-8-bom
+charset = utf-8
 end_of_line = crlf
 trim_trailing_whitespace = true
 insert_final_newline = true
@@ -15,10 +15,12 @@ insert_final_newline = true
 # Code files
 [*.cs]
 indent_size = 4
+charset = utf-8-bom
 
 # Xml project files
 [*.{csproj,dcproj}]
 indent_size = 2
+charset = utf-8-bom
 
 # Xml config files
 [*.{props,targets,ruleset,config,nuspec,resx,vsixmanifest,vsct,DotSettings}]
@@ -180,8 +182,9 @@ ij_xml_text_wrap = normal
 
 
 [*.cs]
-# Sort using and Import directives with System.* appearing first
+# Sort using and Import directives with System.* and Microsoft.* appearing first
 dotnet_sort_system_directives_first = true
+dotnet_sort_microsoft_directives_first = true
 
 # Use this only for fields (IDE0003 and IDE0009)
 dotnet_style_qualification_for_field = false:warning
