@@ -90,7 +90,7 @@ jobs:
           args: >
             -Dsonar.organization=peshkov
             -Dsonar.projectKey=Serilog.Sinks.ApplicationInsights.AspNetCore
-            -Dsonar.python.coverage.reportPaths=coverage.xml
+            -Dsonar.cs.opencover.reportsPaths=TestResults/**/coverage.opencover.xml
             -Dsonar.sources=Serilog.Sinks.ApplicationInsights.AspNetCore/
             -Dsonar.tests=Serilog.Sinks.ApplicationInsights.AspNetCore.UnitTests/
             -Dsonar.verbose=true
