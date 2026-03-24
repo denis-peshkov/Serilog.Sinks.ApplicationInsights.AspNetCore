@@ -1,4 +1,19 @@
-﻿# Serilog.Sinks.ApplicationInsights.AspNetCore [![Nuget](https://img.shields.io/nuget/v/Serilog.Sinks.ApplicationInsights.AspNetCore.svg)](https://nuget.org/packages/Serilog.Sinks.ApplicationInsights.AspNetCore/) [![Documentation](https://img.shields.io/badge/docs-wiki-yellow.svg)](https://github.com/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore/wiki)
+[![License](https://img.shields.io/github/license/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore)](LICENSE)
+[![GitHub Release Date](https://img.shields.io/github/release-date/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore?label=released)](https://github.com/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore/releases)
+[![NuGetVersion](https://img.shields.io/nuget/v/Serilog.Sinks.ApplicationInsights.AspNetCore.svg)](https://nuget.org/packages/Serilog.Sinks.ApplicationInsights.AspNetCore/)
+[![NugetDownloads](https://img.shields.io/nuget/dt/Serilog.Sinks.ApplicationInsights.AspNetCore.svg)](https://nuget.org/packages/Serilog.Sinks.ApplicationInsights.AspNetCore/)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Serilog.Sinks.ApplicationInsights.AspNetCore&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Serilog.Sinks.ApplicationInsights.AspNetCore)
+[![issues](https://img.shields.io/github/issues/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore)](https://github.com/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore/issues)
+[![.NET PR](https://github.com/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore/actions/workflows/dotnet.yml/badge.svg?event=pull_request)](https://github.com/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore/actions/workflows/dotnet.yml)
+
+![Size](https://img.shields.io/github/repo-size/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore)
+[![GitHub contributors](https://img.shields.io/github/contributors/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore)](https://github.com/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore/contributors)
+[![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore/latest?label=new+commits)](https://github.com/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore/commits/master)
+![Activity](https://img.shields.io/github/commit-activity/w/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore)
+![Activity](https://img.shields.io/github/commit-activity/m/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore)
+![Activity](https://img.shields.io/github/commit-activity/y/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore)
+
+# Serilog.Sinks.ApplicationInsights.AspNetCore
 
 Companion helpers for **[Serilog](https://serilog.net/)** and **[Application Insights](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview)** on **ASP.NET Core**: DI registration, W3C correlation initializers, optional request logging middleware, and **ILogger** extensions that emit structured telemetry when used with **Serilog.Sinks.ApplicationInsights** and the included converters.
 
