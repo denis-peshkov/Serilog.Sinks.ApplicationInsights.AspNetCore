@@ -1,6 +1,4 @@
-﻿using Serilog.Sinks.ApplicationInsights.AspNetCore.Helpers;
-
-namespace Serilog.Sinks.ApplicationInsights.AspNetCore.Middlewares;
+﻿namespace Serilog.Sinks.ApplicationInsights.AspNetCore.Middlewares;
 
 /// <summary>
 /// Emits one Application Insights <c>Request</c> telemetry item per HTTP call via
