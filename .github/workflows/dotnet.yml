@@ -1,20 +1,17 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: .NET
 
 on:
   push:
     branches:
       - master
-      - dev
-      - hotfix/*
       - release/*
-      - feature/*
+      - hotfix/*
   pull_request:
     branches:
       - master
-  workflow_dispatch: # allows manual runs from the Actions tab
+  workflow_dispatch: # <-- allows manual runs from the Actions tab
 
 jobs:
   build:
@@ -26,6 +23,7 @@ jobs:
     runs-on: ubuntu-22.04 # ubuntu-latest
 
     steps:
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -60,29 +58,29 @@ jobs:
       - name: Build
         run: |
           dotnet build "$SOLUTION" --configuration "$BUILD_CONFIG" --no-restore \
-          -p:Configuration=$BUILD_CONFIG \
-          -p:Version=${GitVersion_SemVer} \
-          -p:AssemblyVersion=${GitVersion_AssemblySemVer} \
-          -p:FileVersion=${GitVersion_AssemblySemFileVer} \
-          -p:InformationalVersion="${GitVersion_InformationalVersion}" \
-          -p:Company="Denis Peshkov" \
-          -p:Product="Serilog.Sinks.ApplicationInsights.AspNetCore" \
-          -p:Description="Serilog and Application Insights: DI extensions and middleware and telemetry converters for ASP.NET Core." \
-          -p:RepositoryUrl="https://github.com/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore.git" \
-          -p:RepositoryType=git \
-          -p:CLSCompliant=true \
-          -p:NeutralLanguage=en
+            -p:Configuration=$BUILD_CONFIG \
+            -p:Version=${GitVersion_SemVer} \
+            -p:AssemblyVersion=${GitVersion_AssemblySemVer} \
+            -p:FileVersion=${GitVersion_AssemblySemFileVer} \
+            -p:InformationalVersion="${GitVersion_InformationalVersion}" \
+            -p:Company="Denis Peshkov" \
+            -p:Product="Serilog.Sinks.ApplicationInsights.AspNetCore" \
+            -p:Description="Serilog and Application Insights: DI extensions and middleware and telemetry converters for ASP.NET Core." \
+            -p:RepositoryUrl="https://github.com/denis-peshkov/Serilog.Sinks.ApplicationInsights.AspNetCore.git" \
+            -p:RepositoryType=git \
+            -p:CLSCompliant=true \
+            -p:NeutralLanguage=en
 
       - name: Run tests
         run: >
           dotnet test /p:Configuration=$BUILD_CONFIG
-          --no-restore
-          --no-build
-          --verbosity normal
-          --collect:"XPlat Code Coverage"
-          --results-directory ./TestResults
-          --
-          DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+            --no-restore
+            --no-build
+            --verbosity normal
+            --collect:"XPlat Code Coverage"
+            --results-directory ./TestResults
+            --
+            DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
 
       - name: SonarQube Scan
         uses: sonarsource/sonarcloud-github-action@v5 # Ex: v4.0.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan
