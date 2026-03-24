@@ -11,10 +11,12 @@ on:
   pull_request:
     branches:
       - master
-  workflow_dispatch: # <-- allows manual runs from the Actions tab
+  workflow_dispatch: # allows manual runs from the Actions tab
 
 jobs:
   build:
+    permissions: # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#defining-access-for-the-github_token-scopes
+      contents: read
 
     env:
       BUILD_CONFIG: 'Release'
@@ -27,7 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # Disabling shallow clones is recommended for improving the relevancy of reporting
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -74,13 +76,13 @@ jobs:
       - name: Run tests
         run: >
           dotnet test /p:Configuration=$BUILD_CONFIG
-            --no-restore
-            --no-build
-            --verbosity normal
-            --collect:"XPlat Code Coverage"
-            --results-directory ./TestResults
-            --
-            DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+          --no-restore
+          --no-build
+          --verbosity normal
+          --collect:"XPlat Code Coverage"
+          --results-directory ./TestResults
+          --
+          DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
 
       - name: SonarQube Scan
         uses: sonarsource/sonarcloud-github-action@v5 # Ex: v4.0.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan
